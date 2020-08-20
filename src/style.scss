@@ -1,0 +1,136 @@
+// Default
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #427fb4;
+}
+
+// App
+
+.app {
+  padding: 25px;
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dedede;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    column-gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+    font-size: 14px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    background-color: #eee;
+    border: none;
+    border-radius: 2px;
+
+    &:hover,
+    &:focus {
+      background-color: black;
+      color: white;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &__input {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    font-size: 14px;
+    border-bottom: 2px solid #eee;
+    outline: none;
+
+    &:active,
+    &:focus {
+      border-bottom-color: black;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__tab-btn {
+    display: inline-block;
+    padding: 5px 0;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    color: transparentize(black, .8);
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: transparentize(black, .6);
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &--active {
+      color: black;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    display: none;
+    padding-top: 10px;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+}
